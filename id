@@ -1,0 +1,52 @@
+$update     = json_decode(file_get_contents('php://input'));
+$message = $update->message;
+$text           = $message->text;
+$chat_id     = $message->chat->id;
+$user          = $update->message->from->username;
+$from_id     = $message->from->id;
+$from_user = $message->from->username;
+$get             = file_get_contents("https://api.telegram.org/bot$API_KEY/getChatMember?chat_id=$chat_id&user_id=".$from_id);
+$info            = json_decode($get, true);
+$JJ117        = $info['result']['status'];
+$iBadlz = array(
+"ڕێک دڵمانـی 🌝",
+"زۆر قشتیـ ✨",
+"بەراستیـ گووڵیـ گرووپیتـ 🌈",
+"هیوام وایە لەگرووپـ نەڕۆیتـ ⚜️",
+"زۆر قسە خۆش بوویتـ 💘");
+ $JJ119 = array_rand($iBadlz,1);
+ $p_pppp = array(
+    "0.14%",
+    "0.22%",
+    "0.31%",
+    "0.65%",
+    "0.77%",
+    "0.80%",
+    "0.89%",
+    "0.95%");
+     $markst = array_rand($p_pppp,1);
+    
+$dev=511311707;
+if(in_array($from_id,$dev)){$info = "سەرۆک بۆت ✰✰✰✰✰";}elseif($suorse == $managers){$info = "سەرۆک گرووپ✰✰✰";}elseif($suorse == $admins ){$info = " ئەدمینی گرووپ✰";}elseif($suorse == "member" ){$info = "✔ئەندام";}   
+if($rep && $text=="ئایدی" or $text=="id" or $text=="/id" or $text=="/id@anyambot"){
+$result=json_decode(file_get_contents("https://api.telegram.org/bot".API_KEY."/getUserProfilePhotos?user_id=$from_id"),true);
+$file_id=$result["result"]["photos"][0][0]["file_id"];
+$count=$result["result"]["total_count"];
+  var_dump(
+bot("sendphoto",[
+  "chat_id"=>$chat_id,
+  "caption"=>"<b>*┄─━━━━━─┄
+🌑|ɴᴀᴍᴇ~ ✰$name
+🌑|ѕᴛᴀ~  ✰$Alsh
+🌑|ᴜѕᴇʀ~ ✰@$user
+🌑|ᴍѕɢᴇ~ ✰{ ".$msgs['msgs'][$chat_id][$from_id]." }
+🌑|ᴘʜᴏᴛᴏ~✰$count
+🌑|𝙰𝙱𝙾𝚄𝚃⁦ ( $p_pppp[$markst] )
+🌑|𝙿𝙾𝙸𝙽𝚃 ❲ $iBadlz[$JJ119] ❳ 
+🌑|ᴄʜ~✰ @teamamort 
+🌑|ɪᴅ~ ✰</b> <code> $from_id </code> <b>                           ┄─━━━━━─┄*</b>",
+"photo"=>"$file_id",
+'parse_mode'=>'html', 'disable_web_page_preview'=>true,
+  'reply_to_message_id'=>$message->message_id,
+  ]));
+  }
