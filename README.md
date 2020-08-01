@@ -1,2 +1,5 @@
 # anya.php
-کۆدەکانی
+کۆدەکانی ڕۆبۆتی ئانیا لەتیڵیگرام
+@hama_refaat
+@anyambot
+@teamamort
