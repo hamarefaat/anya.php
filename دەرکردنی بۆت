@@ -1,0 +1,19 @@
+//دەکردرنی بۆت
+ $New_member = $message->new_chat_member;
+$usser = $New_member->username;
+$id = $New_member->id; 
+$id_bot = 1153423104;
+if(preg_match('/^(.*)([Bb][Oo][Tt])/',$usser) and $New_member and $id != $id_bot and  $you == "member"){
+bot('kickChatMember',[
+'chat_id'=>$chat_id,
+'user_id'=>$id
+]);
+bot('sendMessage',[
+'chat_id'=>$chat_id,
+'text'=>"👤¦ بەڕێزم : @$user
+👤¦ ناسنامەیـ : $id 
+🚫¦ قەدەغەیە زیادکردنی بۆت بۆ گرووپ
+📛¦ من  بۆتەکەم دەرکرد لەگرووپ
+✘",
+]);
+}
